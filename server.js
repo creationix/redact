@@ -25,6 +25,21 @@ server.listen(PORT, function () {
   console.log("http://localhost:%s/", PORT);
 });
 
+var smith = require('smith');
+var WebSocketServer = require('ws').Server;
 
-var vfs = vfsLocal({root: "/home/tim/Code/" });
-require('vfs-http-transport/server')(vfs, server, "/vfs");
+var api = {
+  add: function (a, b, callback) {
+    callback(null, a + b);
+  }
+};
+
+var wss = new WebSocketServer({server: server});
+wss.on('connection', function(ws) {
+  var agent = new smith.Agent(api);
+  agent.connect(new smith.WebSocketTransport(ws), function (err, client) {
+    if (err) throw err;
+    console.log("client", client);
+  });
+});
+
