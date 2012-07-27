@@ -2,12 +2,35 @@
 
 An experimental app built on top of c9 technology using npm, and jamjs to manage packages.
 
-## Running
+## Running The App
 
-First install the node dependencies.  Install the latest nodejs from nodejs.org.  Then in the current folder to `npm install` to install all npm dependencies.
+If you don't have [nodejs][] yet, go get it!
 
-Then install the browser dependencies.  Go to the "public" folder and type `jam install vfs-socket events stream`.
+Then once you have node, install [jamjs][]
 
-Go back to the root folder and run the server with `node server.js`.
+```sh
+npm install -g jamjs
+```
 
-Point your browser to <http://localhost:8080/> and look in the web console.  The browser-side components require binary websockets and other html5 APIs.  Tested to work in latest Chrome.
+Then clone this project from github and install the libraries for node and the browser.
+
+```sh
+git clone https://github.com/creationix/redact
+cd redact
+npm install
+cd public
+jam install vfs-socket events stream
+cd ..
+```
+
+Now you're ready to start the server!
+
+```sh
+npm start
+```
+
+Open Chrome or another browser that supports the latest websockets and typed arrays.
+Point the browser to your app at <http://localhost:8080/>.
+
+[nodejs]: http://nodejs.org>
+[jamjs]: http://jamjs.org/
