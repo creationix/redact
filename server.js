@@ -4,7 +4,6 @@ var creationix = require('creationix');
 var vfsLocal = require('vfs-local');
 var vfsComposite = require('vfs-composite');
 var vfsHttpAdapter = require('vfs-http-adapter');
-var urlParse = require('url').parse;
 
 var PORT = process.env.PORT || 8080;
 
@@ -25,14 +24,5 @@ server.listen(PORT, function () {
   console.log("http://localhost:%s/", PORT);
 });
 
-var smith = require('smith');
-var WebSocketServer = require('ws').Server;
-
-var api = {
-  add: function (a, b, callback) {
-    callback(null, a + b);
-  }
-};
-
-var vfs = vfsLocal({ root: __dirname + "/" })
-require('vfs-http-transport/server')(vfs, server, "/");
+// Serve the current directory as vfs-http-transport to the browser.
+require('vfs-http-transport/server')(vfsLocal({ root: __dirname + "/" }), server, "/");

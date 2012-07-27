@@ -4,7 +4,8 @@ require(["vfs-socket/consumer"], function (consumer) {
 
   var consumer = new Consumer();
 
-  var ws = new WebSocket("ws://localhost:8080/");
+  var url = document.location.href.replace(/^http/, "ws");
+  var ws = new WebSocket(url);
   ws.onopen = function () {
 
     consumer.connect(new BrowserTransport(ws, true), function (err, server) {
