@@ -1,18 +1,22 @@
-require(["smith"], function (smith) {
-  var Agent = smith.Agent;
-  var BrowserTransport = smith.BrowserTransport;
+require(["vfs-socket/consumer"], function (consumer) {
+  var BrowserTransport = consumer.smith.BrowserTransport;
+  var Consumer = consumer.Consumer;
 
-  var agent = new Agent();
+  var consumer = new Consumer();
 
   var ws = new WebSocket("ws://localhost:8080/");
   ws.onopen = function () {
-    agent.connect(new BrowserTransport(ws, true), function (err, server) {
+
+    consumer.connect(new BrowserTransport(ws, true), function (err, server) {
       if (err) throw err;
-      server.add(5, 7, function (err, result) {
-        if (err) throw err;
-        console.log("5 + 7 =", result);
+      window.server = server;
+      server.readdir("/", {}, function (err, meta) {
+        meta.stream.on("data", function (stat) {
+          var row = document.createElement("p");
+          row.textContent = JSON.stringify(stat);
+          document.body.appendChild(row);
+        });
       });
     });
   };
-
 });

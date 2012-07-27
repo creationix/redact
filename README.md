@@ -6,7 +6,7 @@ An experimental app built on top of c9 technology using npm, and jamjs to manage
 
 First install the node dependencies.  Install the latest nodejs from nodejs.org.  Then in the current folder to `npm install` to install all npm dependencies.
 
-Then install the browser dependencies.  Go to the "public" folder and type `jam install smith events`.
+Then install the browser dependencies.  Go to the "public" folder and type `jam install vfs-socket events stream`.
 
 Go back to the root folder and run the server with `node server.js`.
 

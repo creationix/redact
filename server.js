@@ -34,12 +34,5 @@ var api = {
   }
 };
 
-var wss = new WebSocketServer({server: server});
-wss.on('connection', function(ws) {
-  var agent = new smith.Agent(api);
-  agent.connect(new smith.WebSocketTransport(ws), function (err, client) {
-    if (err) throw err;
-    console.log("client", client);
-  });
-});
-
+var vfs = vfsLocal({ root: __dirname + "/" })
+require('vfs-http-transport/server')(vfs, server, "/");
