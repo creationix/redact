@@ -1,2 +1,27 @@
-body, html
-  { width: 100%; height: 100%; margin: 0; }
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+#files, #panes, #editor, #terminal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+#files {
+  left: 0;
+  width: 300px;
+  overflow: auto;
+}
+#panes {
+  right: 0;
+  left: 300px;
+}
+#editor {
+  left: 0;
+  right: 50%;
+}
+#terminal {
+  left: 50%;
+  right: 0;
+}

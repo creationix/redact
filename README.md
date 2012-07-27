@@ -19,7 +19,7 @@ git clone https://github.com/creationix/redact
 cd redact
 npm install
 cd public
-jam install vfs-socket events stream
+jam install vfs-socket ace events stream
 cd ..
 ```
 

@@ -1,4 +1,4 @@
-require(["vfs-socket/consumer"], function (consumer) {
+require(["vfs-socket/consumer", "ace"], function (consumer, ace) {
   var BrowserTransport = consumer.smith.BrowserTransport;
   var Consumer = consumer.Consumer;
 
@@ -15,9 +15,10 @@ require(["vfs-socket/consumer"], function (consumer) {
         meta.stream.on("data", function (stat) {
           var row = document.createElement("p");
           row.textContent = JSON.stringify(stat);
-          document.body.appendChild(row);
+          document.getElementById("files").appendChild(row);
         });
       });
+      ace.edit(document.getElementById("editor"));
     });
   };
 });
