@@ -18,9 +18,6 @@ Then clone this project from github and install the libraries for node and the b
 git clone https://github.com/creationix/redact
 cd redact
 npm install
-cd public
-jam install vfs-socket ace events stream
-cd ..
 ```
 
 Now you're ready to start the server!
