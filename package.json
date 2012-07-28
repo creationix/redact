@@ -10,7 +10,6 @@
     "creationix": "~0.3.1",
     "vfs-http-adapter": "~0.2.1",
     "smith": "~0.1.5",
-    "embedder-sync": "~0.0.2",
     "vfs-composite": "~0.0.3",
     "ws": "~0.4.21",
     "vfs-http-transport": "~0.0.2"
