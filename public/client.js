@@ -1,6 +1,7 @@
-require(["vfs-socket/consumer", "ace"], function (consumer, ace) {
+require(["vfs-socket/consumer", "ace", "tty"], function (consumer, ace, tty) {
   var BrowserTransport = consumer.smith.BrowserTransport;
   var Consumer = consumer.Consumer;
+  var Terminal = tty.Terminal;
 
   var consumer = new Consumer();
 
@@ -19,6 +20,10 @@ require(["vfs-socket/consumer", "ace"], function (consumer, ace) {
         });
       });
       ace.edit(document.getElementById("editor"));
+      var terminal = new Terminal(80, 24, function (chunk) {
+        console.log("->", chunk);
+      });
+      terminal.open(document.getElementById("terminal"));
     });
   };
 });
