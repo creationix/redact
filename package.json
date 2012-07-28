@@ -12,6 +12,7 @@
     "smith": "~0.1.5",
     "vfs-composite": "~0.0.3",
     "ws": "~0.4.21",
+    "pty.js": "~0.1.2",
     "vfs-http-transport": "~0.0.2"
   },
   "devDependencies": {},
