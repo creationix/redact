@@ -6,13 +6,7 @@ An experimental app built on top of c9 technology using npm, and jamjs to manage
 
 If you don't have [nodejs][] yet, go get it!
 
-Then once you have node, install [jamjs][]
-
-```sh
-npm install -g jamjs
-```
-
-Then clone this project from github and install the libraries for node and the browser.
+Then clone this project from github and install the libraries for node and the browser. Npm will chainload [jamjs] (`jam install`) for you.
 
 ```sh
 git clone https://github.com/creationix/redact
