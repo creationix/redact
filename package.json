@@ -1,8 +1,8 @@
 {
   "name": "redact",
+  "author": "Tim Caswell",
   "version": "0.0.0",
   "description": "A simple code editor",
-  "main": "server.js",
   "private": true,
   "dependencies": {
     "stack": "~0.1.0",
@@ -16,11 +16,6 @@
     "vfs-http-transport": "~0.0.2",
     "jamjs": "~0.2.0"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "jam install"
-  },
   "jam": {
     "packageDir": "public/jam",
     "baseUrl": "public",
@@ -31,6 +26,9 @@
       "stream": "~0.0.1"
     }
   },
-  "author": "Tim Caswell",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "jam install"
+  },
   "license": "MIT"
 }
