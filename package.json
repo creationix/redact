@@ -13,12 +13,23 @@
     "vfs-composite": "~0.0.3",
     "ws": "~0.4.21",
     "pty.js": "~0.1.2",
-    "vfs-http-transport": "~0.0.2"
+    "vfs-http-transport": "~0.0.2",
+    "jamjs": "~0.2.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "cd public; jam install ace tty vfs-socket events stream dombuilder"
+    "install": "jam install"
+  },
+  "jam": {
+    "packageDir": "public/jam",
+    "baseUrl": "public",
+    "dependencies": {
+      "vfs-socket": "~0.1.12",
+      "ace": "~0.2.0",
+      "tty": "~0.0.1",
+      "stream": "~0.0.1"
+    }
   },
   "author": "Tim Caswell",
   "license": "MIT"
