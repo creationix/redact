@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {
     "stack": "~0.1.0",
-    "vfs-local": "~0.2.0",
+    "vfs-local": "~0.3.4",
     "creationix": "~0.3.1",
     "vfs-http-adapter": "~0.2.1",
     "smith": "~0.1.5",
@@ -20,7 +20,7 @@
     "packageDir": "public/jam",
     "baseUrl": "public",
     "dependencies": {
-      "vfs-socket": "~0.1.12",
+      "vfs-socket": "~0.3.0",
       "ace": "~0.2.0",
       "tty": "~0.0.1",
       "stream": "~0.0.1"
